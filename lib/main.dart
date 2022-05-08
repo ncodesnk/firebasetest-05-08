@@ -1,7 +1,9 @@
+import 'package:firebase_test/dataScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_test/database.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -64,6 +66,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   dynamic result = _databaseService.saveInFB(myController1.text, myController2.text);
                 },
                 child: Text("save")
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  myController1.clear();
+                  myController2.clear();
+                },
+                child: Text("clear")
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(DataScreen());
+                },
+                child: Text("view")
               )
             ],
           ),
