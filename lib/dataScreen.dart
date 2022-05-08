@@ -20,7 +20,7 @@ class DataScreeneState extends State<DataScreen> {
       appBar: AppBar(),
       body: Container(
         child: StreamProvider<List<DataModel>>.value(
-          value: DatabaseService().values,
+          value: DatabaseService().values, //! values = database.dart line 25
           initialData: [],
           child: DataList(),
         ),
@@ -65,7 +65,7 @@ class _DataListState extends State<DataList> {
 class DataTile extends StatefulWidget {
   // DataTile({Key? key}) : super(key: key);
 
-  final DataModel dataModel;
+  final DataModel dataModel; //! dataModel = line 52
   DataTile({required this.dataModel});
 
   @override

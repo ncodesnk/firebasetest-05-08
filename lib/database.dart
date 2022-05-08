@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_test/models/data.dart';
 
 class DatabaseService {
+
+  //! upload data
   Future saveInFB(String value1, String value2) async {
     final dataDaveReference = FirebaseFirestore.instance.collection("My-Data");
     return await dataDaveReference.doc().set({
@@ -10,7 +12,7 @@ class DatabaseService {
     });
   }
 
-
+  //! get data
   final getValuesReference = FirebaseFirestore.instance.collection("My-Data");
   List<DataModel> _values(QuerySnapshot querySnapshot) {
     return querySnapshot.docs.map((doc) {
