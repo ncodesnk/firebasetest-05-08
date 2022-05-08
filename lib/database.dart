@@ -3,6 +3,8 @@ import 'package:firebase_test/models/data.dart';
 
 class DatabaseService {
 
+  //! REPALCE THIS FILE WITH YOURS -> android\app\google-services.json
+
   //! upload data
   Future saveInFB(String value1, String value2) async {
     final dataDaveReference = FirebaseFirestore.instance.collection("My-Data");
